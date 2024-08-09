@@ -1,5 +1,5 @@
 /*
- * Copyright (c) 2020 Derek Schmell
+ * Copyright (c) 2020 ZMK Contributors
  *
  * SPDX-License-Identifier: MIT
  */
@@ -20,7 +20,6 @@
 / {
     chosen {
         zmk,kscan = &mock_kscan;
-        zmk,matrix-transform = &default_transform;
     };
 
     mock_kscan: kscan_0 {
