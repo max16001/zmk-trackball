@@ -1,0 +1,11 @@
+file_format: "1"
+id: trackball
+name: Trackball
+type: shield
+url: https://github.com/inverseTrig/zmk-trackball
+requires: [pro_micro]
+features:
+  - keys
+siblings:
+  - trackball
+
