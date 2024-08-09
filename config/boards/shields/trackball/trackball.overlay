@@ -4,6 +4,21 @@
  * SPDX-License-Identifier: MIT
  */
 
+/ {
+    chosen {
+        zmk,kscan = &mock_kscan;
+        zmk,matrix-transform = &default_transform;
+};
+
+    mock_kscan: kscan_0 {
+        compatible = "zmk,kscan-mock";
+        columns = <0>;
+        rows = <0>;
+        events = <0>;
+    };
+};
+
+
 &pinctrl {
     spi0_default: spi0_default {
         group1 {
@@ -37,11 +52,10 @@
         reg = <0>;
         spi-max-frequency = <2000000>;
         irq-gpios = <&gpio0 6 (GPIO_ACTIVE_LOW | GPIO_PULL_UP)>;
-
-        /*   optional features   */
-        // snipe-layers = <1>;
-        // scroll-layers = <2 3>;
-        // automouse-layer = <4>;
+        cpi = <600>;
+        evt-type = <INPUT_EV_REL>;
+        x-input-code = <INPUT_REL_X>;
+        y-input-code = <INPUT_REL_Y>;
     };
 };
 
@@ -49,7 +63,6 @@
   trackball_listener {
     compatible = "zmk,input-listener";
     device = <&trackball>;
-
   };
 };
 
