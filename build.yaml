@@ -4,4 +4,3 @@ include:
     shield: trackball
   - board: nice_nano_v2
     shield: settings_reset
-    snippet: zmk-usb-logging
