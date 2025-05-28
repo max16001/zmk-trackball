@@ -37,7 +37,7 @@ jobs:
           west build -s zmk/app -d build -b nice_nano_v2 -- -DZMK_CONFIG=$(pwd)/config -DSHIELD=trackball
 
       - name: Upload build artifacts
-        uses: actions/upload-artifact@v3
+        uses: actions/upload-artifact@v3.1.2
         with:
           name: firmware
           path: build/zephyr/*.elf
