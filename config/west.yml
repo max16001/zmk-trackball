@@ -4,8 +4,7 @@ manifest:
       url-base: https://github.com/petejohanson
     - name: badjeff
       url-base: https://github.com/badjeff
-    - name: zmk
-      url-https: https://github.com/zmkfirmware/zmk.git
+
   projects:
     - name: zmk
       remote: zmkfirmware
@@ -14,11 +13,8 @@ manifest:
     - name: zmk-pmw3610-driver
       remote: badjeff
       revision: main
-    - name: zmk
-      remote: zmk
-      revision: main
-      path: zmk
+    
   self:
-    #path: config
-    path: zmk
+    path: config
+    
 
