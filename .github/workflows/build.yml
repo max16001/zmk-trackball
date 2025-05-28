@@ -1,6 +1,43 @@
-on: [push, pull_request, workflow_dispatch]
+name: Build ZMK Firmware
+
+on:
+  push:
+    branches:
+      - main
+  pull_request:
+  workflow_dispatch:
 
 jobs:
   build:
-    uses: zmkfirmware/zmk/.github/workflows/build-user-config.yml@main
+    runs-on: ubuntu-latest
 
+    steps:
+      - name: Checkout repository with submodules
+        uses: actions/checkout@v3
+        with:
+          submodules: recursive
+
+      - name: Set up Python 3.12
+        uses: actions/setup-python@v4
+        with:
+          python-version: 3.12
+
+      - name: Install west and Python dependencies
+        run: |
+          python3 -m pip install --upgrade pip
+          pip install west
+
+      - name: Initialize west and update modules
+        run: |
+          west init -m .
+          west update
+
+      - name: Build ZMK firmware
+        run: |
+          west build -s zmk/app -d build -b nice_nano_v2 -- -DZMK_CONFIG=$(pwd)/config -DSHIELD=trackball
+
+      - name: Upload build artifacts
+        uses: actions/upload-artifact@v3
+        with:
+          name: firmware
+          path: build/zephyr/*.elf
