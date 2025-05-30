@@ -19,12 +19,12 @@
         };
 
         BT {
-            bindings = <&tog 3>;
+            bindings = <&tog 2>;
             key-positions = <0 1 2>;
         };
 
         Scroll {
-            bindings = <&tog 2>;
+            bindings = <&tog 1>;
             key-positions = <1 2>;
         };
 
