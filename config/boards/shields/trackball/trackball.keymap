@@ -47,7 +47,7 @@
             label = "Base";
         };
 		
-		layer_2 {
+		layer_1 {
             bindings = <
 		&mkp LCLK &msc SCRL_DOWN &msc SCRL_UP &none &none &none
                 &none     &none          &none        &none &none &none
@@ -57,7 +57,7 @@
             label = "Scroll";
         };
 		
-		layer_3 {
+		layer_2 {
             bindings = <
 		&bt BT_SEL 0 &bt BT_SEL 1 &bt BT_CLR &none &none &none
                 &none        &none        &none      &none &none &none
