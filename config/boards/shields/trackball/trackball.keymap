@@ -13,8 +13,8 @@
     combos {
         compatible = "zmk,combos";
 
-        Out {
-            bindings = <&out OUT_TOG>;
+        Bootlader {
+            bindings = <&bootloader>;
             key-positions = <0 1>;
         };
 
@@ -26,6 +26,11 @@
         Scroll {
             bindings = <&tog 2>;
             key-positions = <1 2>;
+        };
+
+        Out {
+            bindings = <&out OUT_TOG>;
+            key-positions = <0 2>;
         };
     };
 
@@ -40,16 +45,6 @@
             >;
             
             label = "Base";
-        };
-		
-		layer_1 {
-            bindings = <
-		&mkp LCLK &mkp RCLK &mkp MCLK &none &none &none
-                &none     &none     &none     &none &none &none
-                &none     &none     &none     &none &none &none
-            >;
-
-            label = "Out";
         };
 		
 		layer_2 {
